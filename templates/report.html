@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>Inventory Report</h2>
+
+<form method="post" class="mb-3">
+  <input type="text" name="search_product" value="{{ search_product or '' }}" placeholder="Search Product">
+  <button class="btn btn-primary btn-sm">Search</button>
+</form>
+
+<table class="table table-bordered">
+  <tr><th>Product</th><th>Warehouse</th><th>Qty</th></tr>
+  {% for row in rows %}
+  <tr>
+    <td>{{ row.product }}</td>
+    <td>{{ row.location }}</td>
+    <td>{{ row.qty }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% if rows %}
+<canvas id="inventoryChart" height="100"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+const data = {
+  labels: [{% for row in rows %}"{{ row.product }} - {{ row.location }}",{% endfor %}],
+  datasets: [{
+    label: 'Quantity',
+    data: [{% for row in rows %}{{ row.qty }},{% endfor %}],
+    backgroundColor: 'rgba(54, 162, 235, 0.7)'
+  }]
+};
+new Chart(document.getElementById('inventoryChart'), {
+  type: 'bar',
+  data: data
+});
+</script>
+{% else %}
+<p>No data available for report.</p>
+{% endif %}
+{% endblock %}

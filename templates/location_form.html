@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>{{ action }} Location</h2>
+<form method="POST">
+  <div class="mb-3">
+    <label class="form-label">Location Name</label>
+    <input type="text" name="name" class="form-control" required value="{{ location.name if location else '' }}">
+  </div>
+  <button type="submit" class="btn btn-primary">{{ action }}</button>
+</form>
+{% endblock %}

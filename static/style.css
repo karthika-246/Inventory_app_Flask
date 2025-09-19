@@ -1,0 +1,160 @@
+/* ---------- Global Styles ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(160deg, #f3f0ff, #e6e0ff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #7f00ff, #e100ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ---------- Navbar ---------- */
+nav {
+    background: linear-gradient(90deg, #7f00ff, #e100ff);
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+nav a {
+    color: #fff !important;
+    margin: 0 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav a:hover {
+    color: #ffc0ff !important;
+    transform: scale(1.1);
+}
+
+/* ---------- Cards ---------- */
+.card {
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 25px;
+    background: linear-gradient(145deg, #ffffff, #f0e6ff);
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background: linear-gradient(90deg, #7f00ff, #e100ff);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 16px 16px 0 0;
+    padding: 14px 18px;
+}
+
+/* ---------- Forms ---------- */
+input, select, textarea {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border: 1px solid #7f00ff;
+    box-shadow: 0 0 8px rgba(127,0,255,0.3);
+}
+
+button {
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-weight: 600;
+    background: linear-gradient(90deg, #7f00ff, #e100ff);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #e100ff, #7f00ff);
+}
+
+/* ---------- Table ---------- */
+.table {
+    background: linear-gradient(135deg, #ffffff, #f5f0ff);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.table th {
+    background: linear-gradient(90deg, #7f00ff, #e100ff);
+    color: #fff;
+    padding: 14px;
+    text-align: center;
+}
+
+.table td {
+    padding: 14px;
+    text-align: center;
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: rgba(127,0,255,0.05);
+}
+
+.table-hover tbody tr:hover {
+    background: linear-gradient(90deg, #f3e6ff, #e8d0ff);
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+}
+
+/* ---------- Footer ---------- */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: linear-gradient(90deg, #4b0082, #7f00ff);
+    color: #fff;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+}
+
+/* ---------- Chart Canvas ---------- */
+canvas#inventoryChart {
+    display: block;
+    max-width: 90%;
+    margin: 30px auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    background: #fff;
+    padding: 20px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .card, .table {
+        margin: 15px;
+    }
+}

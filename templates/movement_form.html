@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block content %}
+<h2>{{ action }} Product Movement</h2>
+<form method="post">
+  <div class="mb-3">
+    <label class="form-label">Product</label>
+    <select name="product_id" class="form-control" required>
+      {% for p in products %}
+      <option value="{{ p.product_id }}">{{ p.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">From Location (leave blank if new stock)</label>
+    <select name="from_location" class="form-control">
+      <option value="">-- None --</option>
+      {% for l in locations %}
+      <option value="{{ l.location_id }}">{{ l.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">To Location (leave blank if removing stock)</label>
+    <select name="to_location" class="form-control">
+      <option value="">-- None --</option>
+      {% for l in locations %}
+      <option value="{{ l.location_id }}">{{ l.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Quantity</label>
+    <input type="number" name="qty" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">{{ action }}</button>
+</form>
+{% endblock %}
